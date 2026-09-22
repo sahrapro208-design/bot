@@ -1,4 +1,4 @@
-.const {
+const {
   Client,
   GatewayIntentBits,
   Partials,
