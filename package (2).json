@@ -1,0 +1,15 @@
+{
+  "name": "discord-gelismis-yetkili-botu",
+  "version": "1.0.0",
+  "description": "Ticket, moderasyon, başvuru, çekiliş, drop ve klan sistemi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.21.0"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
