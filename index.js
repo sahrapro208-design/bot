@@ -8,6 +8,7 @@ const {
     ActionRowBuilder,
     ButtonBuilder,
     ButtonStyle,
+    SlashCommandBuilder,
     StringSelectMenuBuilder,
     RoleSelectMenuBuilder,
     ChannelSelectMenuBuilder,
