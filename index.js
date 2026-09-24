@@ -5264,5 +5264,3 @@ async function slashHandler(
 
     return true;
 }
-
-console.log("🚀 Bot başlatılıyor...");
