@@ -1,13 +1,12 @@
 {
   "name": "discord-gelismis-yetkili-botu",
   "version": "1.0.0",
-  "description": "Discord gelişmiş yetkili ve topluluk botu",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": "20.x"
   },
   "dependencies": {
     "discord.js": "^14.23.2"
