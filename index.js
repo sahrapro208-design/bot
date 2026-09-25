@@ -5264,3 +5264,15 @@ async function slashHandler(
 
     return true;
 }
+// ======================================================
+// BOTU BAŞLAT
+// ======================================================
+
+client.login(TOKEN)
+    .then(() => {
+        console.log("🚀 Discord botu başlatılıyor...");
+    })
+    .catch(error => {
+        console.error("❌ Discord giriş hatası:", error);
+        process.exit(1);
+    });
