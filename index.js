@@ -5266,6 +5266,48 @@ async function slashHandler(
     return true;
 }
 // ======================================================
+// DISCORD INTERACTION HANDLER
+// ======================================================
+
+client.on("interactionCreate", async interaction => {
+    try {
+        if (await slashHandler(interaction)) {
+            return;
+        }
+
+        if (await handleTicket(interaction)) {
+            return;
+        }
+
+        if (await handleTKM(interaction)) {
+            return;
+        }
+
+        if (await handleApplication(interaction)) {
+            return;
+        }
+
+        if (await handleModeration(interaction)) {
+            return;
+        }
+
+        if (await handleMarket(interaction)) {
+            return;
+        }
+
+    } catch (error) {
+        console.error("❌ Interaction hatası:", error);
+
+        if (!interaction.replied && !interaction.deferred) {
+            await interaction.reply({
+                content: "❌ İşlem sırasında bir hata oluştu.",
+                ephemeral: true
+            }).catch(() => {});
+        }
+    }
+});
+
+// ======================================================
 // BOTU BAŞLAT
 // ======================================================
 
