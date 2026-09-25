@@ -732,6 +732,7 @@ client.once("ready", async () => {
     saveDB();
 
     console.log(`Toplam sunucu: ${client.guilds.cache.size}`);
+        await registerCommands();
 });
 
 // ======================================================
