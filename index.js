@@ -48,18 +48,20 @@ client.on('messageCreate', async (message) => {
         }
     }
 
-    // 2. ROL VER KOMUTU (k!rolver @kullanıcı @rol)
+    // 2. ROL VER KOMUTU (k!rolver @kullanıcı @rol VEYA k!rolver @kullanıcı ROL_ID)
     if (command === 'rolver') {
         const member = message.mentions.members.first();
-        const role = message.mentions.roles.first();
+        
+        // Önce etiketlenen rolü arar, yoksa yazılan ID'den rolü bulur
+        const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[1]);
 
         if (!member || !role) {
-            return message.reply("Lütfen bir kullanıcı ve bir rol etiketleyin. Örn: `k!rolver @user @rol`");
+            return message.reply("Lütfen bir kullanıcı ve geçerli bir rol (etiket veya ID) girin.\nÖrn: `k!rolver @user @rol` veya `k!rolver @user 123456789012345678`");
         }
 
         try {
             await member.roles.add(role);
-            message.channel.send(`✅ **${member.user.tag}** kullanıcısına **${role.name}** rolü verildi.`);
+            message.channel.send(`✅ **${member.user.tag}** kullanıcısına **${role.name}** rolü başarıyla verildi.`);
         } catch (error) {
             console.error(error);
             message.reply("Rol verilirken bir hata oluştu. Bot rolünün, verilecek rolden üstte olduğundan emin olun.");
